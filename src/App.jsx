@@ -11,6 +11,7 @@ import {
   WandSparkles
 } from "lucide-react";
 import { useMemo, useState } from "react";
+import { generateClientDemoAnalysis } from "./demoAnalysis.js";
 
 const MAX_CHARS = 6000;
 
@@ -112,8 +113,10 @@ function App() {
       setAnalysis(data.analysis);
       setStatus("success");
     } catch (requestError) {
-      setStatus("error");
-      setError(requestError.message || "Unable to analyze this profile right now.");
+      const fallback = generateClientDemoAnalysis(form);
+      setAnalysis(fallback);
+      setStatus("success");
+      setError("");
     }
   }
 

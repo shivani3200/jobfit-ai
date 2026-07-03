@@ -43,5 +43,6 @@ function jobFitApiPlugin() {
 }
 
 export default defineConfig({
+  base: process.env.GITHUB_PAGES === "true" ? "/jobfit-ai/" : "/",
   plugins: [react(), jobFitApiPlugin()]
 });
