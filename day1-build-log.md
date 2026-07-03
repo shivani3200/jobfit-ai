@@ -34,17 +34,25 @@ Build a minimal Vercel-ready app that visitors can open, test with sample data, 
 
 - `npm install` completed successfully.
 - `npm run build` completed successfully.
+- `npm run build:pages` completed successfully.
 - Production output generated in `dist/`.
 - Local dev server started successfully at `http://127.0.0.1:5173/`.
 - API smoke test passed for `POST /api/analyze` using the demo analyzer.
 - Browser check passed: the app loads, sample data populates the form, analysis returns result cards, and the copy button is visible.
 - Mobile browser check at 390px width passed: layout stacks cleanly and controls remain inside their containers.
+- Live GitHub Pages check passed: `https://shivani3200.github.io/jobfit-ai/` loads and sample-data analysis returns result cards.
+
+## Public Links
+
+- Live demo: `https://shivani3200.github.io/jobfit-ai/`
+- Source repo: `https://github.com/shivani3200/jobfit-ai`
 
 ## Notes for Deployment
 
 - The app can be deployed without an API key and still works in demo mode.
 - For real AI output, add `OPENAI_API_KEY` and `OPENAI_MODEL` in Vercel.
 - API keys must stay server-side only.
+- GitHub Pages runs the static version with browser-side demo analysis because Pages does not run serverless API routes.
 
 ## Next Improvements
 
